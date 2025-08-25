@@ -400,8 +400,6 @@ footer {
 
 /* JS Messages */
 .message-box {
-  /* margin-top: 16px;
-  margin-bottom: 16px; */
   width: 50%;
   background-color: #0b3d63;
   border: 2px solid orange;
@@ -420,6 +418,31 @@ footer {
 }
 
 /* RESPONSIVENESS */
+
+
+
+/* My phone... */
+@media (max-width: 450px) {
+  h1 {
+    font-size: 30px;
+    }
+  .message-box {
+    width: 75%;
+    font-size: 16px;
+    top: 28px;
+  }
+  /* .results__message {
+  font-size: 16px;
+} */
+ .results__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+ }
+#filter {
+    margin-bottom: 8px;
+}
+
+}
 
 /* SMALL PHONES */
 @media (max-width: 576px) {

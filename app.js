@@ -44,11 +44,7 @@ function clickHandlerFn() {
 }
 
 function resetHome() {
-location.reload(true);
-// const currentOrigin = window.location.origin;
-// console.log(currentOrigin);
-// window.location.href = ``
-
+  location.reload(true);
 }
 
 function newSearch() {
@@ -142,10 +138,6 @@ function displayMovies(movieList) {
     .map((movie) => {
       currentImdbID = movie.imdbID;
 
-//Saturday 8/23.Put entire results__wrapper into js return
-//"Your movie/s will appear here..." or somesuch on Home screen
-//Make messageBox absolute so the page doesn't jump.
-//Take out whatever dumb old message is in html
 //@media
 
       return `

@@ -18,7 +18,7 @@ body {
 }
 h1 {
   line-height: 1.25;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0.1em;
   font-size: 45px;
   max-width: 1000px;
@@ -87,6 +87,9 @@ section {
   margin: 0 auto;
   /* border: 3px solid darkgreen; */
   position: relative;
+}
+.no-cursor {
+  cursor: not-allowed;
 }
 
 /* NAV */
@@ -208,8 +211,6 @@ section {
 /* RESULTS */
 
 #main {
-  /* position: relative; */
-  /* padding: 40px 20px; */
   display: flex;
   flex-direction: column;
 }
@@ -222,6 +223,12 @@ section {
 .results__message {
   font-size: 36px;
 }
+#filter {
+  font-size: 20px;
+}
+
+/* RESULTS */
+
 .results {
   margin: 0 auto;
   width: 100%;
@@ -230,18 +237,14 @@ section {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-#filter {
-  font-size: 20px;
-}
-
-/* RESULTS */
 .movie {
+  background-color: rgb(0, 0, 85);
   width: calc(100% / 3);
   max-width: 300px;
   height: 450px;
   margin: 4px;
   padding: 24px;
-  border: 3px  rgb(0, 0, 85) solid;
+  border: 3px  rgb(240, 206, 12) solid;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -365,12 +368,14 @@ footer {
 .footer__social .fa-brands {
   margin: 0 8px;
   color: rgb(241, 232, 180);
+  cursor: pointer;
 }
 .footer__social .fa-brands:active {
   color:  rgb(0, 0, 85);
 }
 
 /* LOADING */
+
 .loading {
   display: flex;
   align-items: center;
@@ -412,4 +417,67 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   top: 6px;
+}
+
+/* RESPONSIVENESS */
+
+/* SMALL PHONES */
+@media (max-width: 576px) {
+.link__hover-effect {
+    display: none;
+}
+h1 {
+    font-size: 40px;
+}
+.search__wrapper {
+    max-width: 400px;
+}
+.results__message {
+  font-size: 24px;
+}
+#filter {
+  font-size: 16px;
+}
+.results {
+    justify-content: center;
+}
+.movie {
+    width: 300px;
+    margin: 16px;
+}
+.footer__social {
+    display: none;
+}
+}
+
+/* TABLETS, LARGE SMARTPHONES */
+@media (max-width: 768px) {
+.link__hover-effect {
+    display: none;
+}
+#filter {
+  font-size: 16px;
+}
+.results {
+    justify-content: space-around;
+    padding-bottom: 8px;
+}
+.movie {
+    width: 50%;
+    margin: 16px 0;
+}
+}
+
+/* DESKTOP */
+@media (max-width: 992px) {
+.results {
+    justify-content: space-around;
+}
+#filter {
+  font-size: 16px;
+}
+.movie {
+    width: 300px;
+    margin: 16px;
+}
 }

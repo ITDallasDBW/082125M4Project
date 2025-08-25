@@ -106,7 +106,6 @@ const messageText = document.querySelector(".message-text");
 
 //function to display messages
 function showMessage(message, type) {
-  // console.log(message);
   messageText.innerHTML = message;
   //****should these variables be global? Declare at top? */
   const styles = { 
@@ -137,9 +136,6 @@ function displayMovies(movieList) {
     .slice(0, 6)
     .map((movie) => {
       currentImdbID = movie.imdbID;
-
-//@media
-
       return `
       <div class="movie">
         <div class="posterWrapper">
@@ -158,23 +154,7 @@ function displayMovies(movieList) {
       </div>`;
     })
     .join("");
-
-  // console.log(currentImdbID);
 }
-
-
-
-
-
-          // <div class="movie__description">
-
-          //   <div class="plot">A middle-aged husband's life changes dramatically when his wife asks him for a divorce. He seeks to rediscover his manhood with the help of a newfound friend, Jacob, learning to pick up girls at bars.</div>
-
-          //   <div class="movie__director">Directed by Glenn Ficarra, John Requa</div>
-          //   <div class="movie__actors">Starring: Steve Carell, Ryan Gosling, Julianne Moore</div>
-          // </div>
-
-
 
 //SORTING MOVIES
 function sortChange(event) {
@@ -193,35 +173,16 @@ function sortChange(event) {
   displayMovies(sortedMovies);
 }
 
-function delay(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
 
-async function run() {
-  //admire the lovely loading state
-  console.log("run");
-  await delay(5000); // Wait
-}
+// Did not use:
+// function delay(ms) {
+//   return new Promise((resolve) => {
+//     setTimeout(resolve, ms);
+//   });
+// }
 
-//Secondary lookup
-async function fetchPlot(currentImdbID) {
-  const res = await fetch(`${BASE_URL}?i=tt0120611&apikey=${API_KEY}`);
-  const data = await res.json();
-  console.log(data.Actors, data.Director, data.Plot);
-  plotData = data;
-  showPlot(plotData);
-}
-//Secondary display
-function showPlot(plotData) {
-  console.log(plotData);
-  movieDescription.innerHTML = plotData;
-  // .map((plot) => {
-  //   return `
-  //   <div class="plot">${plot.Plot}</div>
-
-  //             <div class="movie__director">Directed by ${plot.Director}</div>
-  //             <div class="movie__actors">Starring: ${plot.Actors}</div>`;
-  // }).join("");
-}
+// async function run() {
+//   //admire the lovely loading state
+//   console.log("run");
+//   await delay(5000); // Wait
+// }
